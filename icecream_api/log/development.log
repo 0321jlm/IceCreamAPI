@@ -1,0 +1,48 @@
+  [1m[35m (148.8ms)[0m  [1m[35mCREATE DATABASE "icecream_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (60.5ms)[0m  [1m[35mCREATE DATABASE "icecream_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2560118659004215155)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogs (20191214151359)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "blogs" ("id" bigserial primary key, "category" character varying, "blogEntry" text, "author" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20191214151359"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-12-14 15:18:06.152962"], ["updated_at", "2019-12-14 15:18:06.152962"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2560118659004215155)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.8ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"quia\", \"veniam\", \"consequuntur\"]"], ["blogEntry", "Iusto ut quam. Neque cum vero. Excepturi quia ratione."], ["author", "Johnson Jast"], ["created_at", "2019-12-14 15:52:17.480010"], ["updated_at", "2019-12-14 15:52:17.480010"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"quibusdam\", \"quisquam\", \"natus\"]"], ["blogEntry", "Quis harum earum. Enim sequi quo. Ex deleniti ut."], ["author", "Sonny Stokes"], ["created_at", "2019-12-14 15:52:17.483758"], ["updated_at", "2019-12-14 15:52:17.483758"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"officia\", \"dolores\", \"voluptas\"]"], ["blogEntry", "Cumque pariatur aut. Modi inventore quia. Est velit ab."], ["author", "Ms. Dustin West"], ["created_at", "2019-12-14 15:52:17.486434"], ["updated_at", "2019-12-14 15:52:17.486434"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"qui\", \"nihil\", \"vitae\"]"], ["blogEntry", "Tempore culpa dolor. Praesentium molestiae voluptatibus. Consequatur nobis similique."], ["author", "Daphine Kreiger"], ["created_at", "2019-12-14 15:52:17.489023"], ["updated_at", "2019-12-14 15:52:17.489023"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBlog Create (0.2ms)[0m  [1m[32mINSERT INTO "blogs" ("category", "blogEntry", "author", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category", "[\"ducimus\", \"labore\", \"pariatur\"]"], ["blogEntry", "Ipsa nostrum non. Labore quod voluptas. Suscipit impedit quia."], ["author", "Tricia Veum"], ["created_at", "2019-12-14 15:52:17.491514"], ["updated_at", "2019-12-14 15:52:17.491514"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2019-12-14 10:52:35 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/jessmadeux/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/jessmadeux/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-6.0.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.7ms | Allocations: 480)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 2610)
+
+
+Started GET "/blogs" for ::1 at 2019-12-14 10:52:37 -0500
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.6ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 5.2ms | Allocations: 5935)
+
+
