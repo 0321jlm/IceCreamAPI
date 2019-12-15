@@ -46,3 +46,11 @@ Processing by BlogsController#index as HTML
 Completed 200 OK in 16ms (Views: 9.2ms | ActiveRecord: 5.2ms | Allocations: 5935)
 
 
+Started GET "/blogs" for ::1 at 2019-12-14 20:14:30 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogsController#index as HTML
+  [1m[36mBlog Load (0.5ms)[0m  [1m[34mSELECT "blogs".* FROM "blogs"[0m
+  ↳ app/controllers/blogs_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 5.5ms | ActiveRecord: 3.8ms | Allocations: 5931)
+
+
